@@ -1,8 +1,9 @@
 import React from 'react'
 
-function GameCard() {
+function GameCard(props) {
+  
   return (
-    <div>GameCard</div>
+    <div></div>
   )
 }
 
