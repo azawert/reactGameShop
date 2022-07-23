@@ -1,0 +1,16 @@
+.cart__container {
+    display:flex;
+    min-width: 120px;
+    justify-content: space-between;
+    position: relative;
+}
+
+
+.cart__totalprice {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart__icon {
+    position: relative;
+}
