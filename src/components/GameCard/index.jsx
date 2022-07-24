@@ -11,7 +11,7 @@ function GameCard({title,image,genres,id,price,description}) {
         <div className={styles.gamecard__container__genre}>
           {genres.map(genre=><Genre genre={genre} key={genre}/>)}
         </div>
-        <div className={styles.gamecard__container__buybutton}><GameBuy  id={id} price={price}/></div>
+        <div className={styles.gamecard__container__buybutton}><GameBuy  id={id} price={price} title={title} image={image} genres={genres} description={description}/></div>
       </div>
     </div>
     
