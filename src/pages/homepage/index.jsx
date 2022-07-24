@@ -18,9 +18,9 @@ const HomePage = () => {
   
 
   return (
-    <>
-    {games.map(game=><GameCard game={game} key={game.id}/>)}
-    </>
+    <div className={styles.container}>
+    {games.map(game=><GameCard {...game} key={game.id}/>)}
+    </div>
   )
 }
 
