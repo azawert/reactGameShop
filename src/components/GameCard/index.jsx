@@ -1,10 +1,24 @@
 import React from 'react'
-import styles from './GameCard.module.scss'
+import { useDispatch } from 'react-redux';
+import {useNavigate} from 'react-router'
+import { setCurrentGame } from '../../redux/slices/gameSlice';
 import GameBuy from '../GameBuyButton'
 import Genre from '../Genre'
-function GameCard({title,image,genres,id,price,description}) {
+import styles from './GameCard.module.scss'
+
+
+function GameCard({...game}) {
+  const {image,title,genres,id,price,description} = game;
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleGameClick = () => {
+    dispatch(setCurrentGame(game))
+    navigate(`/games/${title}`);
+  }
+
   return (
-    <div className={styles.gamecard__container}>
+    <div className={styles.gamecard__container} onClick={handleGameClick}>
       <div className={styles.gamecard__container__details}>
         <img src={image} className={styles.gamecard__container__image}></img>
         <span className={styles.gamecard__container__title}>{title}</span>

@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './homepage.module.scss'
 import axios from 'axios'
 import GameCard from '../../components/GameCard'
+import { Ring } from 'react-awesome-spinners'
 const HomePage = () => {
   const [games,setGames] = React.useState([]);
   const [isLoading,setIsLoading] = React.useState(true)
@@ -19,7 +20,7 @@ const HomePage = () => {
 
   return (
     <div className={styles.container}>
-    {games.map(game=><GameCard {...game} key={game.id}/>)}
+    {isLoading? <Ring/> : games.map(game=><GameCard {...game} key={game.id}/>)}
     </div>
   )
 }
