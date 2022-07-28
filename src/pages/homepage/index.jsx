@@ -3,24 +3,28 @@ import styles from './homepage.module.scss'
 import axios from 'axios'
 import GameCard from '../../components/GameCard'
 import { Ring } from 'react-awesome-spinners'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchGames } from '../../redux/slices/gamesSlice'
 const HomePage = () => {
-  const [games,setGames] = React.useState([]);
-  const [isLoading,setIsLoading] = React.useState(true)
-
+  // const [games,setGames] = React.useState([]);
+  // const [isLoading,setIsLoading] = React.useState(true)
+  const games = useSelector(state=>state.gamesSlice.games)
+  const status = useSelector(state=>state.gamesSlice.status);
+  const dispatch = useDispatch();
+  const fetchData = () =>{
+    dispatch(fetchGames())
+    
+  }
   React.useEffect( ()=> {
-    async function fetchData() {
-     await axios.get('https://62dc85c04438813a2616dd38.mockapi.io/games').then((response)=>{
-      setGames(response.data)
-      setIsLoading(false);
-    })
-    }
+    
     fetchData();
+   
   },[])
   
 
   return (
     <div className={styles.container}>
-    {isLoading? <Ring/> : games.map(game=><GameCard {...game} key={game.id}/>)}
+    {status === 'loading'? <Ring/> : games.map(game=><GameCard {...game} key={game.id}/>)}
     </div>
   )
 }
