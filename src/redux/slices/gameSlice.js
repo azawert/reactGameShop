@@ -1,21 +1,21 @@
-import { createSlice } from "@reduxjs/toolkit";
+// import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-    currentGame: null,
-}
+// const initialState = {
+//     currentGame: null,
+// }
 
-const gameSlice = createSlice({
-    name:'game',
-    initialState,
-    reducers: {
-        setCurrentGame(state,action) {
-            state.currentGame = action.payload;
-        }
-    }
-})
+// const gameSlice = createSlice({
+//     name:'game',
+//     initialState,
+//     reducers: {
+//         setCurrentGame(state,action) {
+//             state.currentGame = action.payload;
+//         }
+//     }
+// })
 
 
 
-export const {setCurrentGame} = gameSlice.actions;
+// export const {setCurrentGame} = gameSlice.actions;
 
-export default gameSlice.reducer;
+// export default gameSlice.reducer;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import {useNavigate} from 'react-router'
-import { setCurrentGame } from '../../redux/slices/gameSlice';
+import { setCurrentGame } from '../../redux/slices/gamesSlice';
 import GameBuy from '../GameBuyButton'
 import Genre from '../Genre'
 import styles from './GameCard.module.scss'

@@ -1,0 +1,21 @@
+.gamepage__wrapper__content {
+    display:flex;
+    &__left {
+        width: 70%;
+    }
+    &__right {
+        width: 30%;
+
+    }
+    &__buy__button {
+        display:flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+    
+}
+img {
+    width: 100%;
+    border-radius: 15px;
+}
+

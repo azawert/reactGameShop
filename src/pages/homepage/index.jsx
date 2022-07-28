@@ -13,7 +13,6 @@ const HomePage = () => {
   const dispatch = useDispatch();
   const fetchData = () =>{
     dispatch(fetchGames())
-    
   }
   React.useEffect( ()=> {
     
@@ -24,7 +23,7 @@ const HomePage = () => {
 
   return (
     <div className={styles.container}>
-    {status === 'loading'? <Ring/> : games.map(game=><GameCard {...game} key={game.id}/>)}
+    {status === 'loading' ? <Ring/> : games.map(game=><GameCard {...game} key={game.id}/>)}
     </div>
   )
 }
